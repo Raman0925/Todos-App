@@ -1,10 +1,13 @@
 import ListHeader from "./Components/ListHeader";
-import React, { useEffect } from "react";
+import Listitem from "./Components/Listitem"
+import React, { useEffect,useState } from "react";
 
 const App = () => {
+  const userEmail = "user2@example.com"; 
+  const {tasks, setTasks} = useState(null)
   const getData = async () => {
     try {
-      const userEmail = "user2@example.com"; // Replace with the actual email or get it dynamically
+    // Replace with the actual email or get it dynamically
 
       const response = await fetch(`http://localhost:8000/todos/${userEmail}`);
 
@@ -13,7 +16,7 @@ const App = () => {
       }
 
       const data = await response.json();
-      console.log(data);
+     setTasks(data)
     } catch (error) {
       console.error(error);
     }
@@ -26,6 +29,7 @@ const App = () => {
   return (
     <div className="app">
       <ListHeader ListName={"Holiday Tick List"} />
+      {sortedTasks.map((task) => <Listitem key = {task.id} task ={task}/>)}
     </div>
   );
 };
