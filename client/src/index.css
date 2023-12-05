@@ -1,42 +1,85 @@
-body{
-  margin:0;
-  padding:0;
-  background-color: rgb(233,241,249);
-  display:flex;
-  justify-content:center;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(61, 127, 193);
+  display: flex;
+  justify-content: center;
   font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
-.app{
-  background-color: rgb(255,255,255);
-  box-shadow:rgba(0,0,0,0.05) 0 6px 24px,rgba(0,0,0,0.08) 0 0 0 1px;
-  border-radius:10px;
-  padding:10px;
-  width:800px;
-  margin-top:50px;
-
-
+.app {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px, rgba(0, 0, 0, 0.08) 0 0 0 1px;
+  border-radius: 10px;
+  padding: 20px; /* Increased padding for better spacing */
+  width: 800px;
+  margin-top: 50px;
 }
-.button-container{
+
+.edit,
+.delete,
+.create {
+  border: 1.5px solid transparent;
+  color: #555; /* Default text color */
+  text-transform: uppercase;
+  padding: 8px 16px; /* Improved padding for better button size */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.edit:hover,
+.delete:hover,
+.create:hover {
+  border-color: #555;
+}
+
+.edit:active,
+.delete:active,
+.create:active {
+  color: rgb(255, 255, 255);
+  background-color: #555;
+}
+
+.button-container {
   display: flex;
-  align-items:center;
-
-  
+  align-items: center;
 }
+
 .button-container button {
-  margin: 0 5px;
-  padding:5px 10px;
-  border-radius:12px;
-  background-color : transparent;
-  font-size: 10px;
-
+  margin-right: 10px; /* Adjusted margin for better spacing */
+  border-radius: 12px;
+  background-color: transparent;
+  font-size: 12px; /* Increased font size */
 }
 
-.list-header{
-  width:100%;
+.signout,
+.signout:hover,
+.signout:active {
+  /* Added styles for signout button */
+  background-color: #f00;
+  color: #fff;
+  padding: 8px 16px;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.list-header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  border:rgba(0,0,0, 0.05) solid 1px; 
+  border: rgba(0, 0, 0, 0.05) solid 1px;
+  padding: 10px; /* Added padding for better spacing */
+  margin-bottom: 20px; /* Added margin to separate header from list items */
+}
 
-
+.list-item {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px; /* Added padding for better spacing */
 }
